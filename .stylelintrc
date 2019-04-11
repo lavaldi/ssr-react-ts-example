@@ -2,6 +2,6 @@
   "processors": ["stylelint-processor-styled-components"],
   "syntax": "scss",
   "rules": {
-    "indentation": 4
+    "indentation": 2
   }
 }
