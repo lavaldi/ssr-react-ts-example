@@ -2,7 +2,7 @@ import express from 'express';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
-import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheet } from 'styled-components';
 import createStore from '@app/src/store/configureStore';
 import { App } from '@app/src/view';
 import { loadData } from '@app/src/view/postsList/components/postsList';
@@ -64,8 +64,8 @@ function renderFullPage(html, preloadedState, styles) {
     '\\u003c'
   )}
         </script>
-        <script type="text/javascript" src="static/vendors~app.47bf4ba6b52cd9ac1c83.js"></script>
-        <script type="text/javascript" src="static/app.47bf4ba6b52cd9ac1c83.js"></script>
+        <script type="text/javascript" src="static/vendors~app.edd2f3b49232bf3a382c.js"></script>
+        <script type="text/javascript" src="static/app.edd2f3b49232bf3a382c.js"></script>
       </body>
     </html>
     `

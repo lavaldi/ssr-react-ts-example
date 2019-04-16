@@ -2,13 +2,16 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { postsList } from '../view/postsList/state/reducer';
 
-const window = typeof window === 'object' ? window : {};
+let preloadedState;
 
-// Grab the state from a global variable injected into the server-generated HTML
-const preloadedState = window.__PRELOADED_STATE__
-
-// Allow the passed state to be garbage-collected
-delete window.__PRELOADED_STATE__;
+if (typeof window !== 'undefined') {
+  // Grab the state from a global variable injected into the server-generated HTML
+  preloadedState = window.__PRELOADED_STATE__
+  // Allow the passed state to be garbage-collected
+  delete window.__PRELOADED_STATE__;
+} else {
+  global.window = {};
+}
 
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
