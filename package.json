@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack/config.dev.js",
+    "prebuild": "rm -rf ./client/dist/*",
     "build": "webpack --config ./config/webpack/config.prod.js",
+    "prebuild:ssr": "rm -rf ./server/dist/*",
     "build:ssr": "webpack --config ./config/webpack/config.ssr.js"
   },
   "keywords": [],
