@@ -41,6 +41,13 @@ const mapDispatchToProps = dispatch => ({
   fetchData: () => dispatch(fetchPosts())
 });
 
+export function loadData(store) {
+  const actionsToBeDispatched = [];
+  actionsToBeDispatched.push(store.dispatch(fetchPosts()));
+
+  return Promise.all(actionsToBeDispatched);
+}
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
